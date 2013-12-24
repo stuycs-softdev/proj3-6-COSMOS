@@ -1,6 +1,7 @@
-proj3-6-COSMOS
+proj3-6-COSMOS (Common Objective Systems Multi-Operator Syndicate)
 ==============
-
+  Hey you try to make all these things make sense. It's not easy.
+  
 Project ARIES (Alternate Reality Integration Enhancement System)
 
 ...It sounds a lot cooler than it actualy is.
