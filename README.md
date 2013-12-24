@@ -11,6 +11,9 @@ ARIES is a game that will take a map and overlay a fantasy world over it (that's
 Team Members
 ==============
 Helen Lin
+
 Jared Yuen
+
 Jason Zhen
+
 Julie Zhu
