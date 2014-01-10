@@ -16,23 +16,23 @@ Julie Zhu
 Deadlines:
 ==============
 
-Project Idea 
-Due: 10 January 2013
-Type: Hard Deadline
-Description: Finalize Project Idea.
-Status: Incomplete.
-Result:
+Project Idea<br>
+Due: 10 January 2013<br>
+Type: Hard Deadline<br>
+Description: Finalize Project Idea.<br>
+Status: Incomplete.<br>
+Result:<br>
 
-Final Submission
-Due Date: 27 January 2013
-Type: Hard Deadline
-Description: Submission to be graded.
-Status: TENTATIVE DEADLINE. Possibly EARILER.
-Result:
+Final Submission<br>
+Due Date: 27 January 2013<br>
+Type: Hard Deadline<br>
+Description: Submission to be graded.<br>
+Status: TENTATIVE DEADLINE. Possibly EARILER.<br>
+Result:<br>
 
-Presentation
-Due Date: 
-Type: 
-Description: Date of presentation.
-Status:
-Result:
+Presentation<br>
+Due Date: <br>
+Type: <br>
+Description: Date of presentation.<br>
+Status: <br>
+Result: <br>
