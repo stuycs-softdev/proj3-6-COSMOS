@@ -1,20 +1,15 @@
-proj3-6-COSMOS (Common Objective Systems Multi-Operator Syndicate)
-==============
+####COSMOS (Common Objective Systems Multi-Operator Syndicate)
 
-  
-Project Pending... (Idea Deadline is 10 January 2013)
-
-
-Team Members
-==============
+#####TEAM MEMBERS:
 Helen Lin<br>
 Jared Yuen<br>
 Jason Zhen<br>
 Julie Zhu
 
+##PROJECT:  
+Project Pending... (Idea Deadline is 10 January 2013)
 
-Deadlines:
-==============
+#Deadlines:
 
 Project Idea<br>
 Due: 10 January 2013<br>
