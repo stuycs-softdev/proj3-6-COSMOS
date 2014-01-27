@@ -11,25 +11,19 @@
         
         <a href="https://github.com/stuycs-softdev/proj3-6-COSMOS"><img style="position: absolute; top: 0; left: 0; border: 0;" src="https://s3.amazonaws.com/github/ribbons/forkme_left_red_aa0000.png" alt="Fork me on GitHub"></a>
 		
-		<div id="outer">
-			<div id="container">
 				
 				<h1>COSMOS</h1>
 				
-				<div id="won">
 					<div id="menu">
 						<a href="/">Home</a>
 						{% if ("username" in session) or ('logged_in' in session)%}
-							<a href="start">Your Pet</a>
+							<a href="pet">Your Pet</a>
 							<a href="logout">Logout</a>
 						{% else %}
                         	<a href="register">Select A Username</a>
                     	{% endif %}
 			        </div>
-				</div>
 				
-			</div>
-		</div>
         
 		
 	</body>

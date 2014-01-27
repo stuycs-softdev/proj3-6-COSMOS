@@ -10,32 +10,25 @@
 	</head>
 	<body>
 
-		
-		<div id="outer">
-			<div id="container">
 				
 				<h1>COSMOS</h1>
 				
-				<div id="won">
 					<div id="menu">
 						<a href="/">Home</a>
 						{% if ("username" in session) or ('logged_in' in session)%}
-							<a href="/start">Your Pet</a>
+							<a href="/playpetnew">Your Pet</a>
 							<a href="/logout">Logout</a>
 						{% else %}
 							<a href="/register">Select A Username</a>
 						{% endif %}
 			        </div>
-				</div>
 				
-				<h2>Your Pet Died</h2>
-                <h3>Adopt a new pet?</h3>
+				<h2>Adopt a new pet?</h2>
+		<br />
 
                 
                 <br />
-				
-			</div>
-		</div>
+			
 		
 	</body>
 </html>

@@ -9,13 +9,9 @@
         <script src={{ url_for('static', filename='js/main.js') }}></script>
 	</head>
 	<body>
-		
-		<div id="outer">
-			<div id="container">
 				
 				<h1>COSMOS</h1>
 				
-				<div id="won">
 					<div id="menu">
 						<a href="/">Home</a>
 					{% if ("username" in session) or ('logged_in' in session)%}
@@ -24,22 +20,18 @@
                         <a href="/register">Select A Username</a>
                     {% endif %}
 
-			        </div>
 				</div>
 				
 				<h2>Welcome Back</h2>
                 <h3><u>{{petname}}</u> says Hi.</h3>
-                <img src=url('catbug.gif') alt="some_text"  width="480" height="360"><br />
+                <img src=url('catbug.gif') alt="some_text"  width="480" height="480"><br />
 
                 <h3>{{message}}</h3>
 
                 <br />
 		<br />
                 <br />
-                				
-			</div>
-		</div>
-		
+                		
 	</body>
 </html>
 
