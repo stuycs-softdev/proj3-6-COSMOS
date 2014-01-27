@@ -1,16 +1,16 @@
 
-// code that is supposed to edit values
+// code that is supposed to make the pet jump after clicking a button
 $(document).ready(function(){
   $("button").click(function(){
-    $("div").animate({left:'250px'});
-    $("div").animate({down:'30px'});
-    $("div").animate({up:'30px'});
-    $("div").animate({down:'30px'});
-    $("div").animate({up:'30px'});
-    $("div").animate({right:'250px'});
+    $("div").animate({down:'50px'});
+    $("div").animate({up:'50px'});
+    $("div").animate({down:'50px'});
+    $("div").animate({up:'50px'});
   });
 });
 
 
-
-
+// code that is supposed to make the pet follow the cursor
+$(img).mousemove(function(e){
+      $('.follow').css({'top': e.clientY - 20, 'left': e.clientX - 20});
+})
