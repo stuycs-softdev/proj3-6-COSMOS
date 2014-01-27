@@ -1,0 +1,77 @@
+@font-face {
+	font-family: "Bazar";
+	src: url("fonts/Bazar.ttf");
+}
+
+body {
+        background-image:url('http://coolshiz.net/wp-content/uploads/2012/02/bg-tex3.jpg');
+        background-repeat:repeat;
+        background-attachment:fixed;
+        text-align:center;  
+	font-family:"Bazar";
+        color:#313131;
+}
+* {
+	margin:0;
+	padding:0;
+}
+
+#outer {
+	width:100%;
+	text-align:center;
+}
+
+#container {
+	display:inline-block;
+	width:1000px;
+}
+
+#button {
+        width:95px;
+        height:30px;
+        line-height:30px;
+        color:white;
+        text-align:center;
+        background-color:#663300;
+        border-style:solid;
+        border-color:white;
+}
+#text {
+        color:#313131;
+	margin-top:10px;
+	width:500px;
+	display:inline-block;
+	text-align:center;
+}
+
+h1 {
+	padding:10px;
+	background:#9cf;
+	padding-bottom:15px;
+	margin-top:15px;
+	text-align:center;
+}
+
+img {
+	margin-top:15px;
+	display:inline-block;
+}
+
+input {
+	display:inline-block;
+	margin-top:15px;
+}
+#sub {
+	font-family:"Bazar";
+	padding:5px;
+	font-size:18px;
+}
+
+.status.name {
+	color:#f00;
+}
+.status.value {
+	color:#0f0;
+}
+
+

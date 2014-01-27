@@ -1,0 +1,64 @@
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+		<meta name="description" content="website description" />
+		<meta name="keywords" content="HTML Javascript CSS JQuery Web Technology Website" />
+		<title>COSMOS</title>
+		<link rel="stylesheet" type="text/css" href={{ url_for('static', filename='css/style.css') }}>
+        <script src={{ url_for('static', filename='js/vendor/jmin.js') }}></script>
+        <script src={{ url_for('static', filename='js/main.js') }}></script>
+	</head>
+	<body>
+		
+		<div id="outer">
+			<div id="container">
+				
+				<h1>COSMOS</h1>
+				
+				<div id="won">
+					<div id="menu">
+						<a href="/">Home</a>
+					{% if ("username" in session) or ('logged_in' in session)%}
+						<a href="/logout">Logout</a>
+					{% else %}
+                        <a href="/register">Select A Username</a>
+                    {% endif %}
+
+			        </div>
+				</div>
+				
+				<h2>Welcome Back</h2>
+                <h3><u>{{petname}}</u> says Hi.</h3>
+                <img src=url('catbug.gif') alt="some_text"  width="480" height="360"><br />
+
+                <h3>{{message}}</h3>
+
+                <br />
+		<br />
+                <br />
+                				
+			</div>
+		</div>
+		
+	</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
