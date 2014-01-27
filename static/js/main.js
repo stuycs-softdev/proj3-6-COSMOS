@@ -1,9 +1,14 @@
 
 // code that is supposed to edit values
-$(function() {
-	$("#price").on("input", function() {
-		$(this).val($(this).val().replace(/\D/g,""));
-	});
+$(document).ready(function(){
+  $("button").click(function(){
+    $("div").animate({left:'250px'});
+    $("div").animate({left:'250px'});
+    $("div").animate({left:'250px'});
+    $("div").animate({left:'250px'});
+    $("div").animate({left:'250px'});
+    $("div").animate({right:'250px'});
+  });
 });
 
 
