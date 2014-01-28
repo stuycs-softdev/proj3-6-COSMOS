@@ -47,7 +47,7 @@ def register():
 @app.route("/play")
 def play():
     if request.method == "GET":
-        return render_template("playpet.html", healthvalue = auth.getHealth(), hungervalue = auth.getHunger(), cleanlinessvalue = auth.getClean(), happinessvalue = auth.getHappy())
+        return render_template("playpet.html", petname = auth.getName(), healthvalue = auth.getHealth(), hungervalue = auth.getHunger(), cleanlinessvalue = auth.getClean(), happinessvalue = auth.getHappy())
     else:
         
         
