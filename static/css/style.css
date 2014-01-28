@@ -4,12 +4,10 @@
 }
 
 body {
-        background-image:url('bg.jpg');
-        background-repeat:repeat;
-        background-attachment:fixed;
+        
         text-align:center;  
 	font-family:"Bazar";
-        color:#F0F0F0;
+        color:#000000;
 }
 
 * {

@@ -66,8 +66,16 @@ def play():
                                    hungervalue = auth.getHunger(pname),
                                    hygienevalue = auth.getHygiene(pname),
                                    happinessvalue = auth.getHappiness(pname))
-        else:
-            return 0
+        else: 
+            if request.form['submit'] == "Feed":
+                auth.decHunger(pname)
+            elif request.form['submit'] == "Clean":
+                auth.incHygiene(pname)
+            elif request.form['submit'] == "Play":
+                auth.incHappiness(pname)
+            auth.updateName(pname,request.form["rename"])
+            return redirect(url_for("play"))
+        
     else:
         return redirect(url_for('new'))
 
@@ -82,7 +90,6 @@ def new():
             return redirect(url_for("play"))
         else:
             return render_template("playpetnew.html")
-
 
 
 @app.route("/logout")

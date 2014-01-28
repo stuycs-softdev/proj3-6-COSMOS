@@ -68,26 +68,32 @@ def getHappiness(pname):
     ph=  pets.find( {"name":pname}, {"happiness":1, "_id":0} )
     return ph[0]['happiness']
     
+def updateName(pname,newName):
+    pets.update(
+        {"name": pname },
+        { "$set": {'name':newName} }
+        )
+
 def updateHealth(pname,newHealth):
     pets.update(
         { "name": pname },
         { "$set": {'health': newHealth} }
         )
 
-def updateHunger(pname,newHunger):
+def decHunger(pname):
     pets.update(
         { "name": pname},
-        { "$set": {'hunger': newHunger} }
+        { "$inc": {'hunger': -10} }
         )
 
-def updateHygiene(pname,newHygiene):
+def incHygiene(pname):
     pets.update(
         { "name": pname},
-        { "$set": {'hygiene': newHygiene} }
+        { "$inc": {'hygiene': 10} }
         )
     
-def updateHappiness(pname,newHappiness):
+def incHappiness(pname):
     pets.update(
         { "name": pname},
-        { "$set": {'happiness': newHappiness} }
+        { "$inc": {'happiness': 10} }
 )

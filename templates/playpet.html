@@ -19,15 +19,26 @@
 	  
 	  <h2>Welcome Back!</h2>
           <h3>{{petname}} says Hi.</h3>
-          <img src=catbug.gif width="143" height="163"><br />
+          <img src="catbug.gif" width="143" height="163"><br />
           <br />
           <br />
 
-	  <p>health: {{healthvalue}} <button>Take Medicine</button></p>
-	  <p>hunger: {{hungervalue}} <button>Feed</button></p>
-	  <p>hygiene: {{hygienevalue}} <button>Clean</button></p>
-	  <p>happiness: {{happinessvalue}} <button>Brush</button></p>
-	  
+	  <form method = "POST">
+	    <p>Health: {{healthvalue}} </p>
+	    <p>Hunger: {{hungervalue}}  </p>
+	    <p>Hygiene: {{hygienevalue}} </p>
+	    <p>Happiness: {{happinessvalue}} </p>
+	    <p>Rename: <input type="text" name="rename" size="20"/> </p>
+	    
+	    <div class="PlayButtons">
+	      <p> <input type="submit" name="Play" value="Rename"> </p>
+	      <p> <input type="submit" name="Play" value="Medicine"> </p>
+	      <p> <input type="submit" name="Play" value="Feed"> </p>
+	      <p> <input type="submit" name="Play"  value="Clean"> </p>
+	      <p> <input type="submit" name="Play" value="Play"> </p>
+	    </div>
+	  </form>
+
 	  <br />
           <br />
           
