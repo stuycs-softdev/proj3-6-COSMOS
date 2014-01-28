@@ -52,23 +52,23 @@ def getPet(user):
 def getOwner(pname):  
     pet = pets.find_one( {"name":pname}, fields = {"_id":True})
     return pet["owner"]
-    
+
 def getHealth(pname):
-    pet = pets.find_one( {"name":pname}, fields = {"_id":True})
-    return pet['health']
-    
+    ph=  pets.find( {"name":pname}, {"health":1, "_id":0} )
+    return ph[0]['health']
+            
 def getHunger(pname):
-    pet = pets.find_one( {"name":pname}, fields = {"_id":True})
-    return pet["hunger"]
+    ph=  pets.find( {"name":pname}, {"hunger":1, "_id":0} )
+    return ph[0]['hunger']
     
 def getHygiene(pname):
-    pet = pets.find_one( {"name":pname}, fields = {"_id":True})
-    return pet["hygiene"]
-
+    ph=  pets.find( {"name":pname}, {"hygiene":1, "_id":0} )
+    return ph[0]['hygiene']
+    
 def getHappiness(pname):
-    pet = pets.find_one( {"name":pname}, fields = {"_id":True})
-    return pet["happiness"]
-
+    ph=  pets.find( {"name":pname}, {"happiness":1, "_id":0} )
+    return ph[0]['happiness']
+    
 def updateHealth(pname,newHealth):
     pets.update(
         { "name": pname },

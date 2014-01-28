@@ -65,7 +65,7 @@ def play():
                                    healthvalue = auth.getHealth(pname),
                                    hungervalue = auth.getHunger(pname),
                                    hygienevalue = auth.getHygiene(pname),
-                                   happinessvalue = auth.getHappy(pname))
+                                   happinessvalue = auth.getHappiness(pname))
         else:
             return 0
     else:
