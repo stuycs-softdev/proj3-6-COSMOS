@@ -31,7 +31,7 @@ def register():
         username = request.form["username"]
         password = request.form["password"]
         cpassword = request.form["cpassword"]
-
+"""
         if (username=="" or password=="" or cpassword==""):
                 return render_template("register.html",error="empty")
         elif (username==password):
@@ -42,6 +42,26 @@ def register():
                 session['username'] = username
                 return redirect(url_for("login"))
         return redirect(url_for("register"))
+"""        
+
+        if (request.form["username"]=="" or request.form["password"]==""):
+            return render_template("register.html",error="empty")
+        elif (request.form["cpassword"]==""):
+            return render_template("register.html",error="badc")
+        elif (request.form["username"]==request.form["password"]):
+            return render_template("register.html",error="lazy")
+        elif request.form["password"]!=request.form["cpassword"]:
+            return render_template("register.html",error="wrongc")
+
+
+        if auth.register(username, password):
+            session['username'] = username
+            return redirect(url_for('login'))
+        else:
+            return redirect(url_for('index'))
+        
+        
+        
 """
 @app.route("/play")
 def play():
