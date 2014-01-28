@@ -23,7 +23,7 @@ def authenticate(user, pword):
         return False
         
 def hasPet(user):
-    if ((pets.find({'owner':user}))).count() > 0:
+    if ((pets.find( {"owner":user}))).count > 0:
         return True
     else:
         return False
@@ -38,15 +38,16 @@ def newPet(pname, oname):
                 "health":100,
                 "hunger":100,
                 "hygiene":100,
-                "happiness":100 }
-                     )
-        
+                "happiness":100 } )
         users.update(
             {"username":oname},
             {"$inc": {"players.pets":1}}
             ) 
         return True    
 
+def getPet(user):
+    pet =  pets.find_one({'owner':user})
+    return pet["name"]
 
 def getOwner(pname):  
     pet = pets.find_one( {"name":pname}, fields = {"_id":True})
@@ -54,7 +55,7 @@ def getOwner(pname):
     
 def getHealth(pname):
     pet = pets.find_one( {"name":pname}, fields = {"_id":True})
-    return pet["health"]
+    return pet['health']
     
 def getHunger(pname):
     pet = pets.find_one( {"name":pname}, fields = {"_id":True})
@@ -70,25 +71,24 @@ def getHappiness(pname):
 
 def updateHealth(pname,newHealth):
     pets.update(
-        { "_id": ObjectId(document_id) },
+        { "name": pname },
         { "$set": {'health': newHealth} }
         )
 
-    
 def updateHunger(pname,newHunger):
     pets.update(
-        { "_id":ObjectId(document_id) },
+        { "name": pname},
         { "$set": {'hunger': newHunger} }
         )
 
 def updateHygiene(pname,newHygiene):
     pets.update(
-        {"_id":ObjectId(document_id) },
+        { "name": pname},
         { "$set": {'hygiene': newHygiene} }
         )
     
 def updateHappiness(pname,newHappiness):
     pets.update(
-        {"_id":ObjectId(document_id) },
+        { "name": pname},
         { "$set": {'happiness': newHappiness} }
 )

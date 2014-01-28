@@ -58,6 +58,7 @@ def portfolio():
 def play():
     user = session["username"]
     if auth.hasPet(user):
+        pname = auth.getPet(user)
         if request.method == "GET":
             return render_template("playpet.html", 
                                    petname = pname,
