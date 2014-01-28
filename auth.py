@@ -5,36 +5,35 @@ from pymongo import MongoClient
 client = MongoClient()
 db = client.users
 collection = db.info
-
+pets = db.pets
+pet = db.info.find_one( {"name":pname}, fields = {"_id_":False})
+    
 def register(user, pword):
-    if((db.info.find( {"username":user}, fields={"_id":False} ))).count() > 0:
+    if((collection.find( {"username":user}, fields={"_id":False} ))).count() > 0:
         return False
     else:
-        db.info.insert( {"username":user, "password":pword} )
+        collection.insert( {"username":user, "password":pword} )
         return True
     
 def authenticate(user, pword):
-    if ((db.info.find( {"username":user}, {"password":pword} ))).count() > 0:
+    if ((collection.find( {"username":user}, {"password":pword} ))).count() > 0:
         return True
     else:
         return False
 
 def getName(pname):  
-    
+    return pet["name"]
     
     
 def getHealth(pname):
-    list = db.info.find_one( {"name":pname}, fields = {"_id_":False})
-    return list["health"]
+    return pet["health"]
     
+
 def getHunger(pname):
-    list = db.info.find_one( {"name":pname}, fields = {"_id_":False})
-    return list["hunger"]
+    return pet["hunger"]
     
 def getClean(pname):
-    list = db.info.find_one( {"name":pname}, fields = {"_id_":False})
-    return list["cleanliness"]
+    return pet["cleanliness"]
 
 def getHappiness(pname):
-    list = db.info.find_one( {"name":pname}, fields = {"_id_":False})
-    return list["happiness"]
+    return pet["happiness"]
