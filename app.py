@@ -47,16 +47,15 @@ def register():
         else:
             return redirect(url_for('index'))
 
-"""
 @app.route("/play")
 def play():
-    if request.method == "GET":
-        user = session["username"]
-        pname = auth.getName(user)
-        return render_template("playpet.html", petname = pname, healthvalue = auth.getHealth(pname), hungervalue = auth.getHunger(pname), cleanlinessvalue = auth.getClean(pname), happinessvalue = auth.getHappy(pname))
+    user = session["username"]
+    if auth.hasPet(user):
+        
+        if request.method == "GET":
+            return render_template("playpet.html", petname = pname, healthvalue = auth.getHealth(pname), hungervalue = auth.getHunger(pname), hygienevalue = auth.getHygiene(pname), happinessvalue = auth.getHappy(pname))
     else:
- """ 
-
+        return render_template("playpetnew.html")
 
 
 @app.route("/new")
