@@ -38,7 +38,7 @@ def register():
                 return render_template("register.html",error="lazy")
         elif (password!=cpassword):
                 return render_template("register.html",error="wrongc")
-        elif (register(username, password)):
+        elif (auth.register(username, password)):
                 session['username'] = username
                 return redirect(url_for("login"))
         return redirect(url_for("register"))
