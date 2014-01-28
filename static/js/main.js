@@ -1,4 +1,3 @@
-
 // code that is supposed to make the pet jump after clicking a button
 $(document).ready(function(){
   $("button").click(function(){
@@ -11,6 +10,6 @@ $(document).ready(function(){
 
 
 // code that is supposed to make the pet follow the cursor
-$(img).mousemove(function(e){
+$("img").mousemove(function(e){
       $('.follow').css({'top': e.clientY - 20, 'left': e.clientX - 20});
 })
