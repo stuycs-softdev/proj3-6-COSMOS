@@ -18,6 +18,13 @@ def authenticate(user, pword):
         return True
     else:
         return False
+        
+        
+def newPet(pname):
+    if (db.info.find( {"name":pname} )).count() > 0:
+        return False
+    else:
+        return True
 
 def getName(name):  
     list = db.info.find_one( {"owner":name}, fields = {"_id_":False})
