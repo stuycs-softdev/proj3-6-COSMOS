@@ -9,14 +9,16 @@ Julie Zhu
 ##PROJECT:
 Virtual pet that the owner (humans) can adopt and take care of. It has different stats: health, hunger, hygiene, and happiness that the owner can take different actions to maintain and keep the pet well and alive!!!! They WILL die if neglected (this is not Neopets). 
 
-###Features
+##Working Features
 *Login
 *Adopt New Pet
-*Health, Hunger, Hygiene, Happiness
-*Health is affected by the 3 other parameters
-*Pet Death when Health drops below 0
+*Renaming
+*Health, Hunger, Hygiene, Happiness buttons
+*Portfolio page with pet stats
 
-###Future Features
+##Future Features
+*HHHH degradation over time
+*Interactive Pet
 *Multiple Pets
 *Level, Attack, Defense
 *Pet Battles
