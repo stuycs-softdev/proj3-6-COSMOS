@@ -59,7 +59,12 @@ def play():
     user = session["username"]
     if auth.hasPet(user):
         if request.method == "GET":
-            return render_template("playpet.html", petname = pname, healthvalue = auth.getHealth(pname), hungervalue = auth.getHunger(pname), hygienevalue = auth.getHygiene(pname), happinessvalue = auth.getHappy(pname))
+            return render_template("playpet.html", 
+                                   petname = pname,
+                                   healthvalue = auth.getHealth(pname),
+                                   hungervalue = auth.getHunger(pname),
+                                   hygienevalue = auth.getHygiene(pname),
+                                   happinessvalue = auth.getHappy(pname))
         else:
             return 0
     else:
