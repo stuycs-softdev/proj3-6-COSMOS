@@ -43,7 +43,6 @@ def register():
                 return redirect(url_for("login"))
         return redirect(url_for("register"))
 """        
-
     if (request.form["username"]=="" or request.form["password"]==""):
         return render_template("register.html",error="empty")
     elif (request.form["cpassword"]==""):
@@ -52,7 +51,6 @@ def register():
         return render_template("register.html",error="lazy")
     elif request.form["password"]!=request.form["cpassword"]:
         return render_template("register.html",error="wrongc")
-
 
     if auth.register(username, password):
         session['username'] = username
