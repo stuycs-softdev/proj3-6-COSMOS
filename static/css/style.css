@@ -1,3 +1,10 @@
+
+#image{
+    position:absolute;
+    margin-top:15px;
+    display:inline-block;	
+}
+
 @font-face {
 	font-family: "Bazar";
 	src: url("fonts/Bazar.ttf");
@@ -23,15 +30,9 @@ h1 {
 	text-align:center;
 }
 
-img {
-	margin-top:15px;
-	display:inline-block;
-}
 
 input {
 	display:inline-block;
 	margin-top:15px;
 }
-
-
 

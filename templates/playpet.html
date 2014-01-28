@@ -4,9 +4,10 @@
     <meta name="description" content="website description" />
     <meta name="keywords" content="HTML Javascript CSS JQuery Web Technology Website" />
     <title>COSMOS</title>
-    <link rel="stylesheet" type="text/css" href={{ url_for('static', filename='css/style.css') }}>
+    <link rel="stylesheet" type="text/css" href= "../static/css/style.css">
     <script src={{ url_for('static', filename='js/vendor/jmin.js') }}></script>
-    <script src={{ url_for('static', filename='js/main.js') }}></script>
+    <!--<script src={{ url_for('static', filename='js/main.js') }}></script> -->
+    <script src="../static/css/main.js"></script>
   </head>
 	<body>
 	  
@@ -19,7 +20,7 @@
 	  
 	  <h2>Welcome Back!</h2>
           <h3>{{petname}} says Hi.</h3>
-          <img src="../static/img/catbug.gif" alt="catbug" width="143" height="163"><br />
+          <img id="catbug" src="../static/img/catbug.gif" alt="catbug" width="143" height="163"><br />
           <br />
           <br />
 
