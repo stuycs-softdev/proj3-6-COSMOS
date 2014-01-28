@@ -73,7 +73,8 @@ def play():
                 auth.incHygiene(pname)
             elif request.form['submit'] == "Play":
                 auth.incHappiness(pname)
-            auth.updateName(pname,request.form["rename"])
+            elif request.form['submit'] == "Rename":
+                auth.updateName(pname,request.form["Rename"])
             return redirect(url_for("play"))
         
     else:
