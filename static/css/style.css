@@ -14,6 +14,7 @@ body {
         text-align:center;  
 	font-family:"Bazar";
         color:#000000;
+       	background-image:bg.jpg;
 }
 
 * {
