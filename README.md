@@ -6,7 +6,8 @@ Jared Yuen<br>
 Jason Zhen<br>
 Julie Zhu
 
-##PROJECT:  
+##PROJECT:
+Virtual pet that the owner (humans) can adopt and take care of. It has different stats: health, hunger, hygiene, and happiness that the owner can take different actions to maintain and keep the pet well and alive!!!! They WILL die if neglected (this is not like Neopets). 
 
 
 #Deadlines:
