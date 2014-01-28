@@ -1,27 +1,40 @@
 <html>
-	<head>
-		<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
-		<meta name="description" content="website description" />
-		<meta name="keywords" content="HTML Javascript CSS JQuery Web Technology Website" />
-		<title></title>
-		<link rel="stylesheet" type="text/css" href={{ url_for('static', filename='css/style.css') }}>
-        <script src={{ url_for('static', filename='js/vendor/jmin.js') }}></script>
-        <script src={{ url_for('static', filename='js/main.js') }}></script>
-	</head>
-	<body>
-		
-				
-				<h1>COSMOS</h1><br />
-				
-				<form class="credentialForm" id="registerForm" action=" {{ url_for('register')}} " method="post">
-	                <h2>Create a username.</h2>
-                    <input type="text" name="username" size="20" placeholder="Username"/><br>
-	
-	                <div class="formButtons">
-		                <input type="submit" name="login">
-		                <button class="cancel" type="button">Cancel</button>
-	                </div>
-                 </form>
-				
-	</body>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+    <meta name="description" content="website description" />
+    <meta name="keywords" content="HTML Javascript CSS JQuery Web Technology Website" />
+    <title></title>
+    <link rel="stylesheet" type="text/css" href={{ url_for('static', filename='css/style.css') }}>
+    <script src={{ url_for('static', filename='js/vendor/jmin.js') }}></script>
+    <script src={{ url_for('static', filename='js/main.js') }}></script>
+  </head>
+  <body>
+    
+    <h1>COSMOS</h1><br />
+    
+    <form class="credentialForm" id="registerForm" action=" {{ url_for('register')}} " method="post">
+      <h2>Create a username.</h2>
+      <input type="text" name="username" size="20" placeholder="Username"/><br>
+      
+      <div class="formButtons">
+	<input type="submit" name="login">
+	<button class="cancel" type="button">Cancel</button>
+      </div>
+    </form>
+    
+    {% if error=="empty" %}
+    No fields can be left blank.
+    
+    {% elif error=="badc" %}
+    Please confirm your password.
+    
+    {% elif error=="lazy" %}
+    Username and password cannot be the same.
+    
+    {% elif error=="wrongc" %}
+    Passwords do not match.
+    
+    {% endif %}
+    
+  </body>
 </html>
