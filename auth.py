@@ -89,11 +89,11 @@ def decHunger(pname):
 def incHygiene(pname):
     pets.update(
         { "name": pname},
-        { "$inc": {'hygiene': 10} }
+        { "$inc": {'hygiene':10} }
         )
     
 def incHappiness(pname):
     pets.update(
         { "name": pname},
-        { "$inc": {'happiness': 10} }
+        { "$inc": {'happiness':10} }
 )

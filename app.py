@@ -59,23 +59,23 @@ def play():
     user = session["username"]
     if auth.hasPet(user):
         pname = auth.getPet(user)
-        if request.method == "GET":
+        if request.method == "POST": 
+            if request.form["Play"] == "Feed":
+                auth.decHunger(pname)
+            elif request.form["Play"] == "Clean":
+                auth.incHygiene(pname)
+            elif request.form["Play"] == "Play":
+                auth.incHappiness(pname)
+            elif request.form["Play"] == "Rename":
+                auth.updateName(pname,request.form["Rename"])
+            return redirect(url_for("play"))
+        elif request.method == "GET":
             return render_template("playpet.html", 
                                    petname = pname,
                                    healthvalue = auth.getHealth(pname),
                                    hungervalue = auth.getHunger(pname),
                                    hygienevalue = auth.getHygiene(pname),
                                    happinessvalue = auth.getHappiness(pname))
-        else: 
-            if request.form['submit'] == "Feed":
-                auth.decHunger(pname)
-            elif request.form['submit'] == "Clean":
-                auth.incHygiene(pname)
-            elif request.form['submit'] == "Play":
-                auth.incHappiness(pname)
-            elif request.form['submit'] == "Rename":
-                auth.updateName(pname,request.form["Rename"])
-            return redirect(url_for("play"))
         
     else:
         return redirect(url_for('new'))
