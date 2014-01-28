@@ -32,12 +32,13 @@ def newPet(pname, oname):
     if (pets.find( {"name":pname}, {"owner":oname} )).count() > 0:
         return False
     else:
-        pets.insert( {"owner":oname},
-                     {"name":pname},
-                     {"health":100},
-                     {"hunger":100},
-                     {"hygiene":100},
-                     {"happiness":100} 
+        pets.insert( {
+                "owner":oname,
+                "name":pname,
+                "health":100,
+                "hunger":100,
+                "hygiene":100,
+                "happiness":100 }
                      )
         
         users.update(
