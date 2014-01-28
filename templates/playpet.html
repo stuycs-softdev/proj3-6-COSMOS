@@ -14,15 +14,10 @@
 				
 					<div id="menu">
 						<a href="/">Home</a>
-					{% if ("username" in session) or ('logged_in' in session)%}
 						<a href="/logout">Logout</a>
-					{% else %}
-                        <a href="/register">Select A Username</a>
-                    {% endif %}
-
 				</div>
 				
-				<h2>Welcome Back</h2>
+				<h2>Welcome Back!</h2>
                 <h3>{{petname}} says Hi.</h3>
                 <img src=catbug.gif width="143" height="163"><br />
                 <br />
