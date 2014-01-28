@@ -42,7 +42,7 @@ def register():
                 session['username'] = username
                 return redirect(url_for("login"))
         else:
-                return redirect(url_for("register")
+                return redirect(url_for("register"))
 
 @app.route("/play")
 def play():
