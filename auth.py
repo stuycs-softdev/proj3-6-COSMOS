@@ -10,8 +10,7 @@ pets = db.pets
 def register(user, pword):
     if((users.find( {"username":user} ))).count() > 0:
         return False
-    elif ( (users.find({"password":pword}) ) ).count() > 0:
-        return False
+    
     else:
         users.insert( {"username":user, "password":pword, "pets": 0} )
         return True
