@@ -51,11 +51,11 @@ def register():
 @app.route("/play")
 def play():
     if request.method == "GET":
-        return render_template("playpet.html", petname = auth.getName(), healthvalue = auth.getHealth(), hungervalue = auth.getHunger(), cleanlinessvalue = auth.getClean(), happinessvalue = auth.getHappy())
+        user = session["username"]
+        pname = auth.getName(user)
+        return render_template("playpet.html", petname = pname, healthvalue = auth.getHealth(pname), hungervalue = auth.getHunger(pname), cleanlinessvalue = auth.getClean(pname), happinessvalue = auth.getHappy(pname))
     else:
-   """     
-        
-
+ """ 
 
 
 

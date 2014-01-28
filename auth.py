@@ -20,10 +20,23 @@ def authenticate(user, pword):
         return True
     else:
         return False
+        
+        
+def newPet(pname):
+    if (db.info.find( {"name":pname} )).count() > 0:
+        return False
+    else:
+        return True
 
+<<<<<<< HEAD
 def getName(pname):  
     return pet["name"]
     
+=======
+def getName(name):  
+    list = db.info.find_one( {"owner":name}, fields = {"_id_":False})
+    return list["owner"]
+>>>>>>> 2f932b5a2bf31962abad43b9dff51a381eb1dc17
     
 def getHealth(pname):
     return pet["health"]
@@ -36,4 +49,20 @@ def getClean(pname):
     return pet["cleanliness"]
 
 def getHappiness(pname):
+<<<<<<< HEAD
     return pet["happiness"]
+=======
+    list = db.info.find_one( {"name":pname}, fields = {"_id_":False})
+    return list["happiness"]
+
+def updateHealth(pname):
+    
+    
+def updateHunger(pname):
+    
+    
+def updateClean(pname):
+    
+    
+def updateHappiness(pname):
+>>>>>>> 2f932b5a2bf31962abad43b9dff51a381eb1dc17
