@@ -46,20 +46,7 @@ def register():
             return redirect(url_for('login'))
         else:
             return redirect(url_for('index'))
-        
-        """
-        if (username=="" or password=="" or cpassword==""):
-                return render_template("register.html",error="empty")
-        elif (username==password):
-                return render_template("register.html",error="lazy")
-        elif (password!=cpassword):
-                return render_template("register.html",error="wrongc")
-        elif (auth.register(username, password)):
-                session['username'] = username
-                return redirect(url_for("login"))
-        return redirect(url_for("register"))
-"""     
-        
+
 """
 @app.route("/play")
 def play():
