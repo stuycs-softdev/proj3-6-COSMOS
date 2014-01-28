@@ -42,13 +42,13 @@ def register():
                 session['username'] = username
                 return redirect(url_for("login"))
         return redirect(url_for("register"))
-
+"""
 @app.route("/play")
 def play():
     if request.method == "GET":
         return render_template("playpet.html", petname = auth.getName(), healthvalue = auth.getHealth(), hungervalue = auth.getHunger(), cleanlinessvalue = auth.getClean(), happinessvalue = auth.getHappy())
     else:
-        
+   """     
         
 
 
