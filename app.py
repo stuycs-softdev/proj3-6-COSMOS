@@ -42,6 +42,29 @@ def register():
         if (request.form["username"]==request.form["cpassword"] and auth.register(username, password)):
             session['username'] = username
             return redirect(url_for("login"))
+            
+
+@app.route("/play")
+def play():
+    if request.method == "GET":
+        return render_template("playpet.html")
+    else:
+        
+
+
+
+
+@app.route("/new")
+def new():
+    if request.method == "GET":
+        return render_template("playpetnew.html")
+    else:
+        pname = request.form["pname"]
+        if (auth.newPet(pname)):
+            return render_template("playpet.html")
+        else:
+            return render_template("playpetnew.html")
+
 
 
 @app.route("/logout")
