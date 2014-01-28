@@ -4,8 +4,7 @@ from pymongo import MongoClient
 
 client = MongoClient()
 db = client.database
-users = db.user
-
+users = db.users
 pets = db.pets
      
 def register(user, pword):
@@ -21,7 +20,6 @@ def authenticate(user, pword):
     else:
         return False
         
-
 def hasPet(user):
     if ((pets.find({'owner':user}))).count() > 0:
         return True
@@ -29,7 +27,7 @@ def hasPet(user):
         return False
         
 def newPet(pname, oname):
-    if (pets.find( {"name":pname} )).count() > 0:
+    if (pets.find( {"name":pname}, {"owner":oname} )).count() > 0:
         return False
     else:
         pets.insert( {"owner": oname}, {"name":pname}, {"health":100}, {"hunger":100}, {"hygiene":100}, {"happiness":100} )

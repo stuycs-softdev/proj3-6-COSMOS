@@ -50,13 +50,13 @@ def register():
 @app.route("/play")
 def play():
     user = session["username"]
-    if auth.hasPet(user):
-        
+    if auth.hasPet(user):        
         if request.method == "GET":
             return render_template("playpet.html", petname = pname, healthvalue = auth.getHealth(pname), hungervalue = auth.getHunger(pname), hygienevalue = auth.getHygiene(pname), happinessvalue = auth.getHappy(pname))
+        else:
+            redirect(url_for('new'))
     else:
-        return render_template("playpetnew.html")
-
+        return redirect(url_for('new'))
 
 @app.route("/new")
 def new():
@@ -66,7 +66,7 @@ def new():
         pname = request.form["pname"]
         oname = session["username"]
         if (auth.newPet(pname,oname)):
-            return render_template("playpet.html", petname = pname)
+            return redirect(url_for('play'))
         else:
             return render_template("playpetnew.html")
 
