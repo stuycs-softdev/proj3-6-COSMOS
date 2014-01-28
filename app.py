@@ -62,7 +62,7 @@ def new():
     else:
         pname = request.form["pname"]
         if (auth.newPet(pname)):
-            return render_template("playpet.html")
+            return render_template("playpet.html", petname = pname)
         else:
             return render_template("playpetnew.html")
 
