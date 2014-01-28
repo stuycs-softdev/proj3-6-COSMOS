@@ -8,10 +8,12 @@ users = db.users
 pets = db.pets
      
 def register(user, pword):
-    if((users.find( {"username":user}, fields={"_id":True} ))).count() > 0:
+    if((users.find( {"username":user} ))).count() > 0:
+        return False
+    elif ( (users.find({"password":pword}) ) ).count() > 0:
         return False
     else:
-        users.insert( {"username":user, "password":pword} )
+        users.insert( {"username":user, "password":pword, "pets": 0} )
         return True
     
 def authenticate(user, pword):
@@ -30,7 +32,16 @@ def newPet(pname, oname):
     if (pets.find( {"name":pname}, {"owner":oname} )).count() > 0:
         return False
     else:
-        pets.insert( {"owner": oname}, {"name":pname}, {"health":100}, {"hunger":100}, {"hygiene":100}, {"happiness":100} )
+        pets.insert( {"owner": oname},
+                     {"name":pname},
+                     {"health":100},
+                     {"hunger":100},
+                     {"hygiene":100},
+                     {"happiness":100} )
+        users.update(
+            {"username":oname},
+            {"$inc": {"players.pets":1}}
+            ) 
         return True    
 
 

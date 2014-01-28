@@ -6,7 +6,10 @@ app.secret_key = 'key'
 
 @app.route("/")
 def index():
-    return render_template("home.html")
+    if 'username' in session:
+        return redirect(url_for('portfolio'))
+    else:
+        return render_template("home.html")
 
 @app.route("/login", methods = ["GET", "POST"])
 def login():
@@ -18,7 +21,7 @@ def login():
         password = request.form["password"]
         if (auth.authenticate(username, password)):
             session["username"] = username
-            return render_template("portfolio.html", username = session["username"])
+            return redirect(url_for('portfolio'))
         else:
             return render_template("login.html", error=True)
                 
@@ -47,18 +50,22 @@ def register():
         else:
             return redirect(url_for('index'))
 
-@app.route("/play")
+@app.route("/portfolio")
+def portfolio():
+    return render_template("portfolio.html",username = session['username'])
+
+@app.route("/play", methods = ["GET","POST"])
 def play():
     user = session["username"]
-    if auth.hasPet(user):        
+    if auth.hasPet(user):
         if request.method == "GET":
             return render_template("playpet.html", petname = pname, healthvalue = auth.getHealth(pname), hungervalue = auth.getHunger(pname), hygienevalue = auth.getHygiene(pname), happinessvalue = auth.getHappy(pname))
         else:
-            redirect(url_for('new'))
+            return 0
     else:
         return redirect(url_for('new'))
 
-@app.route("/new")
+@app.route("/new", methods = ["GET","POST"])
 def new():
     if request.method == "GET":
         return render_template("playpetnew.html")
@@ -66,7 +73,7 @@ def new():
         pname = request.form["pname"]
         oname = session["username"]
         if (auth.newPet(pname,oname)):
-            return redirect(url_for('play'))
+            return redirect(url_for("play"))
         else:
             return render_template("playpetnew.html")
 
