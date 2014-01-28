@@ -5,10 +5,15 @@
     <meta name="keywords" content="HTML Javascript CSS JQuery Web Technology Website" />
     <title>COSMOS</title>
     <link rel="stylesheet" type="text/css" href= "../static/css/style.css">
-    <script src={{ url_for('static', filename='js/vendor/jmin.js') }}></script>
-    <!--<script src={{ url_for('static', filename='js/main.js') }}></script> -->
-    <script src="../static/css/main.js"></script>
+    <!--<script src={{ url_for('static', filename='js/vendor/jmin.js') }}></script>
+    <script src={{ url_for('static', filename='js/main.js') }}></script> -->
+    <script src="../static/js/jmin.js"></script>
+    <!--<script type="text/javascript" src="../static/js/main.js"></script> -->
+    <script src="main.js"></script>
+    
+
   </head>
+
 	<body>
 	  
 	  <h1>COSMOS</h1>
@@ -20,9 +25,10 @@
 	  
 	  <h2>Welcome Back!</h2>
           <h3>{{petname}} says Hi.</h3>
-          <img id="catbug" src="../static/img/catbug.gif" alt="catbug" width="143" height="163"><br />
+          <img id="catbug" src="../static/img/catbug.gif" alt="catbug" width="143" height="163">
+          
           <br />
-          <br />
+	  <br />
 
 	  <form method = "POST">
 	    <p>Health: {{healthvalue}} </p>
