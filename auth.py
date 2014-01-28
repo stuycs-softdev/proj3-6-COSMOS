@@ -19,9 +19,9 @@ def authenticate(user, pword):
     else:
         return False
 
-def getName(pname):  
-    
-    
+def getName(name):  
+    list = db.info.find_one( {"owner":name}, fields = {"_id_":False})
+    return list["owner"]
     
 def getHealth(pname):
     list = db.info.find_one( {"name":pname}, fields = {"_id_":False})
@@ -38,3 +38,14 @@ def getClean(pname):
 def getHappiness(pname):
     list = db.info.find_one( {"name":pname}, fields = {"_id_":False})
     return list["happiness"]
+
+def updateHealth(pname):
+    
+    
+def updateHunger(pname):
+    
+    
+def updateClean(pname):
+    
+    
+def updateHappiness(pname):
