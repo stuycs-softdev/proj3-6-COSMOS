@@ -21,11 +21,13 @@ def authenticate(user, pword):
     else:
         return False
         
-def hasPet(user):
-    if ((pets.find( {"owner":user}))).count > 0:
-        return True
-    else:
+def hasPet(username):
+    #if ((pets.find( {"owner":user}))).count > 0:
+    user = users.find_one({"username":username})
+    if user["pets"] == 0:
         return False
+    else:
+        return True
         
 def newPet(pname, oname):
     if (pets.find( {"name":pname}, {"owner":oname} )).count() > 0:
@@ -40,7 +42,7 @@ def newPet(pname, oname):
                 "happiness":100 } )
         users.update(
             {"username":oname},
-            {"$inc": {"players.pets":1}}
+            {"$inc": {"pets":1}}
             ) 
         return True    
 

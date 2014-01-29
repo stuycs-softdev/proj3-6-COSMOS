@@ -85,7 +85,7 @@ def new():
     if request.method == "GET":
         return render_template("playpetnew.html")
     else:
-        pname = request.form["pname"]
+        pname = request.form["petname"]
         oname = session["username"]
         if (auth.newPet(pname,oname)):
             return redirect(url_for("play"))
